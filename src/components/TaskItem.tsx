@@ -22,7 +22,7 @@ const TaskItem: React.FC<TaskItemProps> = (props) => {
         </div>
         <div className='flex items-center gap-2'>
           <div className='inline rounded-2xl bg-gray-200 p-1 px-2 text-xs font-bold text-gray-500'>
-            {createDate.getHours() - 12}:
+            {Math.abs(createDate.getHours() - 12)}:
             {createDate.getMinutes().toString().length === 2
               ? createDate.getMinutes()
               : `0${createDate.getMinutes()}`}{' '}
