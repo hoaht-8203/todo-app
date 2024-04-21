@@ -28,10 +28,10 @@ const ClapIcon = (props: IconProps) => {
       <path
         fill='none'
         stroke='#B0BEC5'
-        stroke-linecap='round'
-        stroke-linejoin='round'
-        stroke-miterlimit='10'
-        stroke-width='5'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeMiterlimit='10'
+        strokeWidth='5'
         d='m5 93.87l12.78-.91m12.65 15.41l-4.19 12.11M6.3 113.24l16.66-11.69m98.01-83.01l-9.87 8.17m-19.25-5.18L88.22 9.24m20.42-5.7l-6.75 19.19'
       />
       <path

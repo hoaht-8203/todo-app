@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { Todo, TodoStorage } from '../@types/todo.type'
 import TaskInput from './TaskInput'
 import TaskList from './TaskList'
-import { Todo, TodoStorage } from '../@types/todo.type'
 
 const initTodoList = () => {
   const todoList = localStorage.getItem('todos')

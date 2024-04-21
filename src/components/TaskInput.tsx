@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
+import { Todo } from '../@types/todo.type'
+import connect, { ExtraInforType } from '../HOC/connect'
 import LevelTodoKey from '../constants/LevelTodo'
 import CornIcon from './icon/CornIcon'
 import Input from './input/Input'
 import Select from './input/Select'
-import { Todo } from '../@types/todo.type'
 
-interface TaskInputProps {
+interface TaskInputProps extends ExtraInforType {
   addNewTodo: (task: string, level: string) => void
   todoEdit: Todo | null
   editTodo: (taskKey: string, newTask: string, level: string) => void
@@ -13,9 +14,18 @@ interface TaskInputProps {
   handleChangeLevelEditTodo: (level: string) => void
 }
 
-const TaskInput = (props: TaskInputProps) => {
-  const { addNewTodo, todoEdit, editTodo, handleChangeTaskEditTodo, handleChangeLevelEditTodo } =
-    props
+const TaskInput: React.FC<TaskInputProps> = (props) => {
+  const {
+    addNewTodo,
+    todoEdit,
+    editTodo,
+    handleChangeTaskEditTodo,
+    handleChangeLevelEditTodo,
+    debug,
+    log
+  } = props
+
+  // log(debug) --> Learn about HOC (Higer Order Component)
 
   const [task, setTask] = useState<string>('')
   const [level, setLevel] = useState<string>(LevelTodoKey.MIDDLE)
@@ -65,4 +75,4 @@ const TaskInput = (props: TaskInputProps) => {
   )
 }
 
-export default TaskInput
+export default connect<TaskInputProps>(TaskInput)

@@ -1,7 +1,7 @@
-const LevelTodoKey = {
-  LOW: 'Low',
-  MIDDLE: 'Middle',
-  HIGH: 'High'
+enum LevelTodoKey {
+  LOW = 'Low',
+  MIDDLE = 'Middle',
+  HIGH = 'High'
 }
 
 export default LevelTodoKey
